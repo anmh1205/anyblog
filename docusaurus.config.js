@@ -1,11 +1,13 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 
 export default {
-  title: 'Anyblog',
-  tagline: 'Firmware và hệ thống nhúng',
+  title: 'IVTS Firmware Training',
+  tagline: 'Dựng lại firmware IVTS trên ESP32-S3 từ mã nguồn thật',
   favicon: 'img/favicon.png',
-  url: process.env.SITE_URL || 'https://anyblog-ivts-lab.botanicalpeony8.chatgpt.site',
-  baseUrl: '/',
+  url: 'https://anmh1205.github.io',
+  baseUrl: '/anyblog/',
+  organizationName: 'anmh1205',
+  projectName: 'anyblog',
   trailingSlash: true,
   onBrokenLinks: 'throw',
   markdown: {
@@ -19,40 +21,36 @@ export default {
     [
       'classic',
       {
-        docs: {sidebarPath: './sidebars.js', sidebarCollapsed: false},
-        blog: {
-          blogTitle: 'Ghi chép kỹ thuật',
-          blogDescription: 'Giải thích các quyết định thiết kế trong firmware IVTS.',
-          blogSidebarTitle: 'Bài viết',
-          blogSidebarCount: 'ALL',
-          feedOptions: {type: ['rss', 'atom']},
-          onUntruncatedBlogPosts: 'throw',
+        docs: {
+          sidebarPath: './sidebars.js',
+          sidebarCollapsed: true,
+          routeBasePath: 'docs',
         },
+        blog: false,
         theme: {customCss: './src/css/custom.css'},
       },
     ],
   ],
   themeConfig: {
-    image: 'img/firmware-bench.webp',
     navbar: {
-      title: 'anyblog',
+      title: 'IVTS Firmware Training',
       items: [
-        {to: '/docs/ivts/', label: 'Tài liệu', position: 'left', activeBasePath: '/docs'},
-        {to: '/blog/', label: 'Blog', position: 'left'},
+        {
+          type: 'docSidebar',
+          sidebarId: 'trainingSidebar',
+          label: 'Khóa học',
+          position: 'left',
+        },
+        {
+          href: 'https://github.com/anmh1205/anyblog',
+          label: 'GitHub',
+          position: 'right',
+        },
       ],
     },
     footer: {
-      links: [
-        {
-          title: 'Anyblog',
-          items: [
-            {label: 'Trang chủ', to: '/'},
-            {label: 'Giáo trình IVTS', to: '/docs/ivts/'},
-            {label: 'Ghi chép kỹ thuật', to: '/blog/'},
-          ],
-        },
-      ],
-      copyright: 'Anyblog · Firmware và hệ thống nhúng',
+      style: 'dark',
+      copyright: 'IVTS Firmware Training · Docusaurus 3.10.1 · GitHub Pages',
     },
     prism: {
       theme: prismThemes.github,
