@@ -1,0 +1,182 @@
+@import './fonts.css';
+
+:root {
+  --ifm-font-family-base: 'Be Vietnam Pro', system-ui, sans-serif;
+  --ifm-heading-font-family: var(--ifm-font-family-base);
+  --ifm-font-family-monospace: 'Cascadia Code', 'SFMono-Regular', Consolas, monospace;
+  --ifm-font-color-base: #142039;
+  --ifm-background-color: #fff;
+  --ifm-color-primary: #244bdc;
+  --ifm-color-primary-dark: #1f40bc;
+  --ifm-color-primary-darker: #1a36a4;
+  --ifm-color-primary-darkest: #132772;
+  --ifm-color-primary-light: #3459ed;
+  --ifm-color-primary-lighter: #4b6bf1;
+  --ifm-color-primary-lightest: #6b85f6;
+  --ifm-navbar-height: 4.25rem;
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-background-color: #fff;
+  --ifm-menu-color: #485773;
+  --ifm-line-height-base: 1.7;
+  --ifm-code-font-size: 93%;
+  --ifm-heading-font-weight: 800;
+  --site-ink: #131e35;
+  --site-muted: #52617b;
+  --site-paper: #f5f7fd;
+  --site-surface: #fff;
+  --site-line: #e0e6f0;
+  --site-accent: #244bdc;
+  --site-accent-soft: #eaf0ff;
+  --site-accent-text: #fff;
+  --site-accent-hover: #1737b0;
+  --site-width: 80rem;
+  --site-gutter: clamp(1.25rem, 4.5vw, 4.5rem);
+  --doc-sidebar-width: 17.75rem !important;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --ifm-background-color: #111a2c;
+  --ifm-background-surface-color: #172237;
+  --ifm-navbar-background-color: #111a2c;
+  --ifm-color-primary: #a0b4ff;
+  --ifm-color-primary-dark: #8fa7ff;
+  --ifm-color-primary-darker: #7e99ff;
+  --ifm-color-primary-darkest: #6d8bfb;
+  --ifm-color-primary-light: #afc0ff;
+  --ifm-color-primary-lighter: #bbcaff;
+  --ifm-color-primary-lightest: #ced8ff;
+  --ifm-font-color-base: #e8eeff;
+  --ifm-menu-color: #b7c4dd;
+  --site-ink: #edf1ff;
+  --site-muted: #b3c0dc;
+  --site-paper: #0e1728;
+  --site-surface: #172237;
+  --site-line: #2d3a55;
+  --site-accent: #a0b4ff;
+  --site-accent-soft: #242f53;
+  --site-accent-text: #111a2c;
+  --site-accent-hover: #bccaff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 4px;
+}
+
+.navbar {
+  border-bottom: 1px solid var(--site-line);
+  padding-inline: var(--site-gutter);
+}
+
+.navbar__inner {
+  max-width: var(--site-width);
+  margin-inline: auto;
+}
+
+.navbar__brand {
+  gap: 0.67rem;
+  margin-inline-end: clamp(1.2rem, 3.7vw, 3.75rem);
+}
+
+.navbar__brand::before {
+  content: '';
+  display: block;
+  inline-size: 1.9rem;
+  block-size: 1.9rem;
+  border-radius: 0.48rem;
+  background: url('../../static/img/favicon.png') center / cover no-repeat var(--site-accent);
+}
+
+.navbar__title {
+  color: var(--site-ink);
+  font-size: 1.33rem;
+  font-weight: 800;
+  letter-spacing: -0.075em;
+}
+
+.navbar__link {
+  color: var(--site-muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.navbar__link:hover, .navbar__link--active {
+  color: var(--site-accent);
+}
+
+.footer {
+  --ifm-footer-background-color: var(--site-ink);
+  --ifm-footer-color: #c2cee4;
+  --ifm-footer-link-color: #e9efff;
+  --ifm-footer-title-color: #fff;
+  --ifm-footer-link-hover-color: #fff;
+  padding-block: 2.75rem;
+}
+
+[data-theme='dark'] .footer {
+  --ifm-footer-background-color: #0a1020;
+}
+
+.footer__links {
+  text-align: center;
+}
+
+.footer__items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+}
+
+.footer__copyright {
+  font-size: 0.86rem;
+}
+
+.menu {
+  padding: 1.15rem 0.85rem !important;
+}
+
+.menu__link {
+  font-size: 0.89rem;
+  line-height: 1.45;
+  padding-block: 0.58rem;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background-color: var(--site-accent-soft);
+  font-weight: 700;
+}
+
+.theme-doc-markdown h1, main article header h1 {
+  font-size: clamp(2.1rem, 4vw, 3.15rem);
+  line-height: 1.18;
+  letter-spacing: -0.065em;
+}
+
+.theme-doc-markdown h2, main article header h2 {
+  line-height: 1.24;
+  letter-spacing: -0.045em;
+}
+
+.theme-doc-markdown p, .theme-doc-markdown li {
+  line-height: 1.8;
+}
+
+.table-of-contents {
+  line-height: 1.5;
+}
+
+.pagination-nav__link {
+  border-color: var(--site-line);
+}
+
+.pagination-nav__link:hover {
+  background: var(--site-accent-soft);
+}
+
+@media (max-width: 996px) {
+  .navbar__brand {
+    margin-inline-end: 0;
+  }
+}
